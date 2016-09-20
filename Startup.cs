@@ -7,6 +7,10 @@ using Nancy.ViewEngines.Razor;
 
 namespace ToDoList
 {
+  public static class DBConfiguration
+  {
+      public static string ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=todo_test;Integrated Security=SSPI;";
+  }
   public class Startup
   {
     public void Configure(IApplicationBuilder app)
@@ -37,9 +41,6 @@ namespace ToDoList
       {
         get { return false; }
       }
-    public static class DBConfiguration
-    {
-        public static string ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=todo;Integrated Security=SSPI;";
-    }
+
     }
 }
