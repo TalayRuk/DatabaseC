@@ -125,6 +125,7 @@ namespace ToDoList
     SqlParameter taskIdParameter = new SqlParameter();
     taskIdParameter.ParameterName = "@TaskId";
     taskIdParameter.Value = id.ToString();
+    // need to change int id to string so that it can be plug in to @TaskId line 124
     cmd.Parameters.Add(taskIdParameter);
     SqlDataReader rdr = cmd.ExecuteReader();
 
@@ -149,7 +150,7 @@ namespace ToDoList
     return foundTask;
   }
 
-  
+
     // once the Delete method is declare here. Then, the Test will pass w/DeleteAll() in the TaskTest.cs for the first Test
     public static void DeleteAll()
     {
